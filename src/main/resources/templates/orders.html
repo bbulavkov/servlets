@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>This is an orders page!!!</h2>
+
+<h1 th:text="'Orders count: ' + ${orders.size()}"></h1>
+
+<ul>
+    <li th:each="order: ${orders}">
+
+        <span th:text="${order.user}"></span>
+        <span th:text="${order.sum}"></span>
+        <span th:text="${order.id}"></span>
+
+        <form action="http://localhost:8080/api/orders/delete" method="POST">
+            <input type="text" id="id" name="id" hidden="true" th:value="${order.id}"><br>
+            <input type="submit" value="Delete">
+        </form>
+    </li>
+</ul>
+
+<form action="http://localhost:8080/api/orders" method="POST">
+
+    <label for="user">User</label><br>
+    <input type="text" id="user" name="user" value="John"><br>
+
+    <label for="sum">Sum</label><br>
+    <input type="text" id="sum" name="sum" value="100"><br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/order".</p>
+
+</body>
+</html>
+

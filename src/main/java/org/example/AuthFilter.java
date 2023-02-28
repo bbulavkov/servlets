@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebFilter("/api/*")
+//@WebFilter("/api/*")
 public class AuthFilter extends HttpFilter {
     @Override
     protected void doFilter(HttpServletRequest req,

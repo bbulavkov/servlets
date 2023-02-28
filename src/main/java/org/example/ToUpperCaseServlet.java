@@ -25,17 +25,6 @@ public class ToUpperCaseServlet extends HttpServlet {
 
         PrintWriter writer = resp.getWriter();
 
-//        String var = req.getParameter("var");
-//
-//        if (var != null) {
-//            writer.println("var " + var.toUpperCase());
-//        }
-//
-//        String var1 = req.getParameter("var1");
-//
-//        if (var1 != null) {
-//            writer.println("var " + var1.toUpperCase());
-//        }
 
         String allParameters = getAllParameters(req);
         writer.println("All params "+allParameters);
